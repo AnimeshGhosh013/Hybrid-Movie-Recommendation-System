@@ -1,0 +1,59 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- style css -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+    <link rel="icon" type="ico" sizes="32x32" href="../static/favicon.ico">
+
+    <script>
+        function showLoading() {
+            // Hide the login form
+            document.getElementById("login-form").style.display = "none";
+
+            // Show the loading GIF
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</head>
+<body id="content" style="font-family: 'Noto Sans JP', sans-serif;">
+        <div class="login-form" id="login-form">
+            <center>
+            <div class = "heading">
+                <h1>Movie Recommendation System</h1>
+            </div>
+            <div>
+                {% if error %}
+                <div class="alert alert-warning" role="alert" style="width: 15rem; height: 3rem;">
+                    <p>{{ error }}</p>
+                </div>
+                {% endif %}
+                <form method="POST" action="/">
+                    <div class="form-group shadow-textarea below" style="margin-top: 30px;text-align: center;color: white;">
+                        <!-- <label for="userId">User Id:</label> -->
+                        <input class="movie form-control" type="text" name="userId" id="userId" placeholder="Enter user Id" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818" autocomplete="off" required >
+                    </div>
+                    <div class="login-button" style="text-align: center;">
+                        <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;" type="submit" name ="login" value="login" onclick="showLoading()">Login</button>
+                    </div>
+                </form>
+            </div>
+            </center>
+        </div>
+        <div class="loading" id="loading">
+            <img src="/static/loading1.gif" alt="Loading...">
+        </div>
+    </body>
+</html>

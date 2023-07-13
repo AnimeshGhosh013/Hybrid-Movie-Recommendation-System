@@ -1,0 +1,84 @@
+
+.login-form {
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    margin-top: 160px;
+    margin-left: 518px;
+    display: none;
+}
+
+h1 {
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #e50914;
+    font-weight: bold;
+	font-size: 4rem;
+    margin-top: 30px;
+    margin-bottom: 5rem;
+    text-shadow: #000000 0px 0px 13px;
+ }
+
+#content {
+	background-image: url("../static/image.jpg");
+	background-color: #181818;
+	font-family: 'Noto Sans JP', sans-serif;
+    width: auto;
+    height: auto;
+}
+
+body{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.movie {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    resize: none;
+    border-radius: 10rem;
+}
+
+.movie-button {
+    margin: 4rem auto auto;
+    width: 12rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    border-radius: 1.2rem;
+    font-weight: bold;
+}
+
+
+input{
+    border-radius: 1.5rem;
+}
+
+.movie-list{
+    width: 25rem;
+    text-align: center;
+    font-size: 1rem;
+    font-family: cursive;
+    margin: auto;
+    padding-top: 3rem;
+}
+
+.navigation-bar{
+    display:flex
+}
+
+h2{
+    color:#ffffff;
+    font-weight: bold;
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.error-message {
+    padding-top: 5rem;
+}

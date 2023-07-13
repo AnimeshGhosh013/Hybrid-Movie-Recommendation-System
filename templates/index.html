@@ -1,0 +1,61 @@
+<html>
+   <head>
+      <title>Hybrid Recommendation System</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+      <!-- style css -->
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+      <link rel="icon" type="ico" sizes="32x32" href="../static/favicon.ico">
+
+   </head>
+
+   <body>
+      <div class = "navigation-bar navbar navbar-dark bg-dark" style="padding: 0; background-color: linear-gradient(to bottom right, rgb(0, 0, 0),rgb(rgb(71, 71, 71)))">
+         <div>
+            <h2 style = "margin:auto auto auto 1rem;">Movie Recommendation System</h2>
+         </div>
+         <div style="margin:1rem auto auto 14rem">
+            <form method="POST" action="/recommend">
+               {% if userId %}
+                  <button class="btn btn-light" style="margin-right: 0.5rem;" type="submit" name ="moreMovies" value="moreMovies">Get More Movies</button>
+               {% endif %}
+                  <button class="btn btn-light" type="submit" name ="back" value="back">Login with different Id</button>
+            </form>
+         </div>
+         {% if userId %}
+         <div style="margin:auto">
+            <h2>User Id: {{ userId }}</h2>
+         </div>
+         {% endif %}
+      </div>
+
+      
+      <div id="content" style="height:100%">
+         {% if userId %}
+         <div class = movie-list>
+            <ul class="list-group list-group-flush">
+               {% for movie_name in movies %}
+                  <li class="list-group-item" style = "background-color: #f3d5a8;">{{movie_name}}</li>
+               {% endfor %}
+            </ul>
+         </div>
+         {% endif %}
+      
+      {% if error %}
+         <div class="error-message">
+         <center><h2>{{ error }}</h2></center>
+         </div>
+      {% endif %}
+      
+      </div>
+   </body>
+</html>
